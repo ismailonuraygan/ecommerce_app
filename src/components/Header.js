@@ -2,7 +2,7 @@ import React from 'react'
 import Image from "next/image";
 import logo from '../public/image/download-removebg-preview.png';
 import {MenuIcon, SearchIcon , ShoppingCartIcon} from '@heroicons/react/outline';
-
+import { ShoppingBagIcon } from '@heroicons/react/outline';
 function Header() {
     return (
         <header>
@@ -20,6 +20,23 @@ function Header() {
                 <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-gray-400 hover:bg-gray-500">
                     <input className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4" type="text" />
                     <SearchIcon className="h-12 p-4"/>
+                </div>
+                {/* Right */}
+                <div className="flex items-center text-sm whitespace-nowrap">
+                    <div className="mx-3 cursor-pointer hover:underline">
+                        <p>Cigogne</p>
+                        <p className="font-extrabold">Account & List</p>
+                    </div>
+                    
+                    <div className="mx-3 cursor-pointer hover:underline">
+                        <p className="font-extrabold md:text-base">Returns</p>
+                        <p className="font-extrabold md:text-base">& Orders</p>
+                    </div>
+                    <div className = "relative mx-5 cursor-pointer hover:underline flex items-center">
+                        <span className="absolute top-0 left-7 right-0 md:right-10 h-5 w-5 bg-black text-center rounded-full text-white">0</span>
+                        <ShoppingBagIcon className="h-10"/> 
+                        <p className="hidden sm:flex font-extrabold md:text-base mt-2">Basket</p>
+                    </div>
                 </div>
             </div>
             <div>
