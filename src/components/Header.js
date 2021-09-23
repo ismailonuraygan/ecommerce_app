@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from "next/image";
-import logo from '../public/image/download-removebg-preview.png';
+import logo from '../public/image/mustache-161330_960_720.png';
 import {MenuIcon, SearchIcon , ShoppingCartIcon} from '@heroicons/react/outline';
 import { ShoppingBagIcon } from '@heroicons/react/outline';
 function Header() {
     return (
         <header>
             <div className="flex items-center bg-yellow-300 p-1 flex-grow">
-                <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+                <div className="mt-2 mr-4 ml-2 flex items-center flex-grow sm:flex-grow-0">
                     <Image
                          src={logo}
                         width={100}
@@ -39,8 +39,14 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div>
-
+            <div className="flex items-center bg-yellow-100  p-2 space-x-3 pl-5">
+                <p className="font-bold flex items-center hover:underline cursor-pointer">
+                    <MenuIcon className="h-6 mr-1"/> 
+                    All
+                </p>
+                <p className="font-bold hover:underline cursor-pointer">Today' Deals</p>
+                <p className="font-bold hover:underline cursor-pointer">Customer Service</p>
+                <p className="hidden sm:inline-block font-bold hover:underline cursor-pointer">Gift Cards</p>
             </div>
         </header>
     )
