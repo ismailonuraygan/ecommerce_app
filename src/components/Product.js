@@ -36,8 +36,9 @@ function Product({id, title, price, description, category, image}) {
                     <Image src={prime}  width={60} height={60} alt="" />
                     <p>Free next-day delivery</p>
                 </div>
+                
             )}
-            
+            <button className="mt-auto button">Add to Basket</button>
         </div>
     )
 }
