@@ -1,9 +1,15 @@
 import React from 'react'
 import Image from "next/image";
-import logo from '../public/image/mustache-161330_960_720.png';
+import logo from './image/mustache.png';
 import {MenuIcon, SearchIcon , ShoppingCartIcon} from '@heroicons/react/outline';
 import { ShoppingBagIcon } from '@heroicons/react/outline';
+import { singIn, signOut, useSession, signIn } from 'next-auth/client';
+
 function Header() {
+    const [session] = useSession();
+
+
+
     return (
         <header>
             <div className="flex items-center bg-yellow-300 p-1 flex-grow">
@@ -23,8 +29,10 @@ function Header() {
                 </div>
                 {/* Right */}
                 <div className="flex items-center text-sm whitespace-nowrap">
-                    <div className="mx-3 cursor-pointer hover:underline">
-                        <p>Cigogne</p>
+                    <div onClick={!session ? signIn : signOut} className="mx-3 cursor-pointer hover:underline">
+                        <p>
+                            {session? `Hello! ${session.user.name}`: `Sign In`}
+                        </p>
                         <p className="font-extrabold">Account & List</p>
                     </div>
                     
@@ -39,7 +47,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center bg-yellow-100  p-2 space-x-3 pl-5">
+            <div className="flex items-center bg-yellow-200  p-2 space-x-3 pl-5">
                 <p className="font-bold flex items-center hover:underline cursor-pointer">
                     <MenuIcon className="h-6 mr-1"/> 
                     All
