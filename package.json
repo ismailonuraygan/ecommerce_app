@@ -13,6 +13,7 @@
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.1",
     "@tailwindcss/line-clamp": "0.2.0",
+    "firebase": "8.7.1",
     "next": "11.1.2",
     "next-auth": "3.27.3",
     "npm": "^7.24.0",
