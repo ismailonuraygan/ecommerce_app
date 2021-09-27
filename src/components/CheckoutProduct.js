@@ -1,10 +1,18 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/dist/client/image";
 import Currency from 'react-currency-formatter';
+import { useDispatch } from "react-redux";
 import prime from '../components/image/Prime-tag.png'
+import { removeFromBasket } from '../slices/basketSlice';
 
 
 function CheckoutProduct({id, title, rating, price, description, category, image, hasPrime}) {
+    const dispatch = useDispatch();
+    const removeItemFromBasket = () => {
+        dispatch(removeFromBasket({ id }))
+
+    }
+
     return (
         <div className="grid grid-cols-5">
             <Image src={image} width={200} height={200} objectFit="contain" />
@@ -29,9 +37,7 @@ function CheckoutProduct({id, title, rating, price, description, category, image
 
             </div>
             <div className="flex flex-col space-y-2 my-auto justify-self-end">
-                <div>
-                    
-                </div>
+                <button onClick={() => removeItemFromBasket()} className="button">Remove from Basket</button>
             </div>
         </div>
     )
