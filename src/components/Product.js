@@ -9,11 +9,12 @@ function Product({id, title, price, description, category, image}) {
     const max_rating = 5;
     const min_rating = 1;
     const [rating] = useState(Math.floor(Math.random() * (max_rating - min_rating + 1 )) + min_rating)
-    const hasPrime = useState(Math.random() < 0.5);
+    const [hasPrime] = useState(Math.random() < 0.5);
+    
     const dispatch = useDispatch()
     const addBasket = () => {
         const product ={
-            id, title, price, description, category, image
+            id, title, price, description, category, image, hasPrime, rating
         }
         //Sending the product as an action to the redux store. 
         dispatch(addToBasket(product))
@@ -31,7 +32,7 @@ function Product({id, title, price, description, category, image}) {
             <h4 className="my-2">{title}</h4>
             <div className="flex">
                 {Array(rating).fill().map((_, i) => (
-                    <StarIcon className="h-5 w-5" />
+                    <StarIcon key={i} className="h-5 w-5" />
                     
                 ))}
             </div>
@@ -40,7 +41,7 @@ function Product({id, title, price, description, category, image}) {
                 <Currency quantity={price} currency="USD" />
             </div>
 
-            {hasPrime[0] && (
+            {hasPrime && (
                 <div className="flex items-center space-x-2 mt-3">
                     <Image src={prime}  width={60} height={60} alt="" />
                     <p>Free next-day delivery</p>
