@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Image from 'next/dist/client/image';
 import { StarIcon } from '@heroicons/react/solid';
 import Currency from 'react-currency-formatter';
-import prime from './image/Prime-tag.png';
+import prime from '../public/image/Prime-tag.png';
 import {useDispatch} from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
 function Product({id, title, price, description, category, image}) {

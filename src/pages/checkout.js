@@ -1,6 +1,6 @@
 import Header from "../components/Header"
 import Image from 'next/image';
-import checkout_banner from '../components/image/70143581-e-commerce-banner.jpg'
+import checkout_banner from '../public/image/70143581-e-commerce-banner.jpg'
 import { useSelector } from "react-redux";
 import { selectItems, selectTotalPrice } from "../slices/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
@@ -11,7 +11,6 @@ function Checkout() {
     const items = useSelector(selectItems);
     const session = useSession();
     const totalPrice = useSelector(selectTotalPrice);
-    console.log(session);
     return (
         <div className="bg-gray-100" >
             <Header />
@@ -21,7 +20,7 @@ function Checkout() {
                      src={checkout_banner}
                      width={1024}
                      height={341}
-                     objectFit="contain"
+                     objectFit="contain" 
                      />
                 <div className="flex flex-col p-5 space-y-10 bg-white">
                     <h1 className="text-3xl border-b pb-4">

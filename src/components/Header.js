@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import logo from './image/mustache.png';
+import logo from '../public/image/mustache.png';
 import {MenuIcon, SearchIcon , ShoppingCartIcon} from '@heroicons/react/outline';
 import { ShoppingBagIcon } from '@heroicons/react/outline';
 import { signOut, useSession, signIn } from 'next-auth/client';

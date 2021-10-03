@@ -1,8 +1,8 @@
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import img1 from './image/first.jpg';
-import img2 from './image/second.jpg';
-import img3 from './image/third.jpg';
+import img1 from '../public/image/first.jpg';
+import img2 from '../public/image/second.jpg';
+import img3 from '../public/image/third.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Image from 'next/dist/client/image';
 
