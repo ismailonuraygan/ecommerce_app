@@ -1,9 +1,6 @@
 import React from 'react'
 import Product from './Product';
-import img4 from './image/4.jpg';
-import Image from 'next/dist/client/image';
 import styles from './ProductFeed.module.css';
-
 
 const ProductFeed = ({ products }) => {
     return (
@@ -19,8 +16,8 @@ const ProductFeed = ({ products }) => {
                     image={image}
                 />
             ))}
-            <img className="md:col-span-full w-full" src="https://links.papareact.com/dyz" alt=""  />
 
+            <img className="md:col-span-full w-full" src="https://links.papareact.com/dyz" alt="" />
 
             <div className={styles.secondFeed}>
                 {products.slice(4, 5).map(({ id, title, price, description, category, image }) => (
