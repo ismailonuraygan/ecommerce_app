@@ -2,7 +2,7 @@ import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/dist/client/image";
 import Currency from 'react-currency-formatter';
 import { useDispatch } from "react-redux";
-import prime from '../components/image/Prime-tag.png'
+import prime from "../public/image/Prime-tag.png"
 import { removeFromBasket } from '../slices/basketSlice';
 
 
